@@ -1,17 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { MarketplacePriceCalculator, CalculationResult, formatPrice, formatPercentage } from "@/lib/calculator";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import { CalculationResult, formatPercentage, formatPrice, MarketplacePriceCalculator } from "@/lib/calculator";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { AnimatePresence, motion } from "framer-motion";
+import { useCallback, useEffect, useState } from "react";
+import { useForm, UseFormRegisterReturn } from "react-hook-form";
+import { z } from "zod";
 
 // Form Schemas
 const baseSchema = z.object({
@@ -43,7 +43,7 @@ interface FormFieldProps {
     type?: string;
     step?: string;
     placeholder?: string;
-    register: any;
+    register: UseFormRegisterReturn;
     error?: { message?: string };
     className?: string;
 }
@@ -127,7 +127,7 @@ export function PriceCalculator() {
         }
     });
 
-    const calculatePrices = async (data: FormData) => {
+    const calculatePrices = useCallback(async (data: FormData) => {
         setIsCalculating(true);
         try {
             const calculator = new MarketplacePriceCalculator(
@@ -148,7 +148,7 @@ export function PriceCalculator() {
         } finally {
             setIsCalculating(false);
         }
-    };
+    }, [activeTab]);
 
     const onSubmit = (data: FormData) => {
         calculatePrices(data);
@@ -163,7 +163,7 @@ export function PriceCalculator() {
             platformFixedCommission: "6.99",
         } as FormData;
         calculatePrices(initialData);
-    }, []);
+    }, [calculatePrices]);
 
     return (
         <div className="w-full bg-background sm:bg-muted/50">
