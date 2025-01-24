@@ -154,17 +154,6 @@ export function PriceCalculator() {
         calculatePrices(data);
     };
 
-    // Initial calculation when component mounts
-    useEffect(() => {
-        const initialData = {
-            productCost: "100",
-            commissionRate: "21.5",
-            vatRate: "20",
-            platformFixedCommission: "6.99",
-        } as FormData;
-        calculatePrices(initialData);
-    }, [calculatePrices]);
-
     return (
         <div className="w-full bg-background sm:bg-muted/50">
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

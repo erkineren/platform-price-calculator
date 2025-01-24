@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "@/components/ui/logo";
 
 function GitHubIcon(props: React.SVGProps<SVGSVGElement>) {
     return (
@@ -24,13 +25,18 @@ export function Header() {
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col sm:flex-row sm:items-center py-3 sm:py-4">
                     <div className="flex items-center justify-between">
-                        <div>
+                        <div className="flex items-center gap-3">
                             <Link href="/" className="inline-flex">
-                                <h1 className="font-bold text-lg sm:text-xl">Pazar Yeri Fiyat Hesaplayıcı</h1>
+                                <Logo size={40} />
                             </Link>
-                            <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
-                                Pazar yeri ürünleriniz için fiyat, kar ve maliyet hesaplayın
-                            </p>
+                            <div>
+                                <Link href="/" className="inline-flex">
+                                    <h1 className="font-bold text-lg sm:text-xl">Pazar Yeri Fiyat Hesaplayıcı</h1>
+                                </Link>
+                                <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
+                                    Pazar yeri ürünleriniz için fiyat, kar ve maliyet hesaplayın
+                                </p>
+                            </div>
                         </div>
                         <div className="sm:hidden">
                             <Link

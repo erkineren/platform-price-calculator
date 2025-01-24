@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="512" height="512" rx="128" fill="#09090B"/>
+    
+    <!-- Calculator Body -->
+    <rect x="128" y="96" width="256" height="320" rx="32" fill="#FAFAFA" filter="drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))"/>
+    
+    <!-- Display Background with Gradient -->
+    <rect x="152" y="120" width="208" height="72" rx="12" fill="url(#displayGradient)"/>
+    
+    <!-- TL Symbol -->
+    <g>
+        <path d="M220 156 H280" stroke="#09090B" stroke-width="14" stroke-linecap="round"/>
+        <path d="M250 140 V172" stroke="#09090B" stroke-width="14" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Calculator Buttons with Shadow -->
+    <g filter="drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05))">
+        <!-- Row 1 -->
+        <rect x="152" y="212" width="56" height="40" rx="8" fill="#E2E8F0"/>
+        <rect x="228" y="212" width="56" height="40" rx="8" fill="#E2E8F0"/>
+        <rect x="304" y="212" width="56" height="40" rx="8" fill="#E2E8F0"/>
+        
+        <!-- Row 2 -->
+        <rect x="152" y="268" width="56" height="40" rx="8" fill="#E2E8F0"/>
+        <rect x="228" y="268" width="56" height="40" rx="8" fill="#E2E8F0"/>
+        <rect x="304" y="268" width="56" height="40" rx="8" fill="#94A3B8"/>
+        
+        <!-- Row 3 -->
+        <rect x="152" y="324" width="56" height="40" rx="8" fill="#E2E8F0"/>
+        <rect x="228" y="324" width="56" height="40" rx="8" fill="#E2E8F0"/>
+        <rect x="304" y="324" width="56" height="40" rx="8" fill="#94A3B8"/>
+    </g>
+    
+    <!-- Button Text -->
+    <g fill="#475569" font-family="system-ui, -apple-system" font-weight="600">
+        <text x="169" y="238" font-size="16">7</text>
+        <text x="245" y="238" font-size="16">8</text>
+        <text x="321" y="238" font-size="16">9</text>
+        
+        <text x="169" y="294" font-size="16">4</text>
+        <text x="245" y="294" font-size="16">5</text>
+        <text x="321" y="294" font-size="16">6</text>
+        
+        <text x="169" y="350" font-size="16">1</text>
+        <text x="245" y="350" font-size="16">2</text>
+        <text x="321" y="350" font-size="16">3</text>
+    </g>
+    
+    <!-- Gradient Definitions -->
+    <defs>
+        <linearGradient id="displayGradient" x1="152" y1="120" x2="360" y2="192" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#E2E8F0"/>
+            <stop offset="100%" stop-color="#CBD5E1"/>
+        </linearGradient>
+    </defs>
+</svg> 
