@@ -9,7 +9,7 @@ import { CalculationResult, formatPercentage, formatPrice, MarketplacePriceCalcu
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AnimatePresence, motion } from "framer-motion";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { useForm, UseFormRegisterReturn } from "react-hook-form";
 import { z } from "zod";
 
